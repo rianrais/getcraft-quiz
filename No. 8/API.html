@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Currencies</title>
+</head>
+<style>
+
+</style>
+
+<script>
+    /* 
+     Trying to get the data to no avail. I know that I should get the coutry code from API, then get the currency code
+     and then get the JSON data.
+     
+     I think I need to learn more on how to get the JSON data retrieved using Fetch and ES6.
+    */
+  const ul = document.getElementById('currents');
+  const url = '';
+  fetch(url)
+  .then((resp) => resp.json())
+  .then(function(data) {
+    let currents = data.results;
+    return currents.map(function(current) {
+      // Get the data
+    })
+  })
+  .catch((error) => console.log(JSON.stringify(error)));   
+</script>
+
+
+<body>
+<h1>Currency for <h1 id="currency"></h1></h1>
+<li id="currents"> </li>
+</body>
+
+</html>
