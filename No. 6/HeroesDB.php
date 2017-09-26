@@ -55,9 +55,9 @@ Schema::create('statuses', function (Blueprint $table) {
 });
 
 /**
- *  Heroes Table
+ *  Superheroes Table
  *
- *  ID | First Name | Last Name | Alter Ego | Address | Status_ID | Gender_ID | City_ID
+ *  ID | First Name | Last Name | Alter Ego | Status_ID | Gender_ID
  */
 Schema::create('superheroes', function (Blueprint $table) {
     $table->increments('id');
@@ -67,9 +67,21 @@ Schema::create('superheroes', function (Blueprint $table) {
     $table->string('address');
     $table->integer('status_id')->unsigned(); // Foreign Key
     $table->integer('gender_id')->unsigned(); // Foreign Key
-    $table->integer('city_id')->unsigned(); // Foreign Key
     $table->foreign('status_id')->references('id')->on('statuses');
     $table->foreign('gender_id')->references('id')->on('genders');
+});
+
+/**
+ *  Heroes Addresses Table
+ *
+ *  ID | Address | Superhero ID | City ID  
+ */
+Schema::create('heroes_addresses', function (Blueprint $table) {
+    $table->increments('id');
+    $table->string('address');
+    $table->integer('superhero_id')->unsigned(); // Foreign Key
+    $table->integer('city_id')->unsigned(); // Foreign Key
+    $table->foreign('superhero_id')->references('id')->on('superheroes');
     $table->foreign('city_id')->references('id')->on('cities');
 });
 
@@ -85,11 +97,11 @@ Schema::create('powers', function (Blueprint $table) {
 });
 
 /**
- *  Hero Powers Table
+ *  Superheroes Powers Table
  *
  *  ID | Superhero_ID | Power_ID | isActive
  */
-Schema::create('hero_powers', function (Blueprint $table) {
+Schema::create('superheroes_powers', function (Blueprint $table) {
     $table->increments('id');
     $table->integer('superhero_id')->unsigned(); // Foreign Key
     $table->integer('power_id')->unsigned(); // Foreign Key

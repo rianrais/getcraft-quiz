@@ -88,5 +88,5 @@ Array.prototype.groupBy = function(prop) {
     }, {});
 }
   
-console.log(byGender = arr.groupBy('gender'));
+console.log(arr.groupBy('gender'));
 
