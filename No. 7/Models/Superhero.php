@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Superhero extends Model
 {
     public function gender()
     {
@@ -18,7 +18,7 @@ class Status extends Model
 
     public function power()
     {
-        return $this->hasMany('App\Power');
+        return $this->belongsToMany('App\Power');
     }
 
     public function address()

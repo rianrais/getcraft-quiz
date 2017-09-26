@@ -48,7 +48,6 @@ var arr = [
  * 
  *  I've just heard and learn how to use this fat arrow thingy and wow.
  */
-// getAlterEgo = (list) => list.alterEgo
 const heroList = arr.map(getAlterEgo = (list) => list.alterEgo);
 
 console.log(heroList);
@@ -59,8 +58,6 @@ console.log(heroList);
  *  Sorry, gw kayanya butuh belajar ES6 fat arrow lebih jauh untuk memperpendek kodingan dibawah. >_>
  *  Is it possible to chain these codes?
  */
-// getPower = (list) => list.powers;
-
 const powerList = arr.map(getPower = (list) => list.powers); // Get all the arrays inside an object
 
 const combinedPowerList = powerList.reduce((prev, curr) =>prev.concat(curr)); // Combine them using reduce

@@ -1,11 +1,10 @@
 <?php
 
 /**
- *  Hello, please be advised that I am assuming all Heroes in the Database HAVE ONE ADDRESS.
- *  
- *  Because it seems all heroes have different addresses.
- *
+ *  Hello, I've updated the database to fit your request better.
+ * 
  *  And this is the database schema (the mickey mouse version) for creating table in PHP Laravel.
+ *  Since the real way to do it in Laravel is by creating migration file per table.
  *
  *  Lastly, I want to ensure normalization across all of the data - 
  *  as such there will be no data repeat across the DB (unless its a name or a Foreign Key).
@@ -109,7 +108,5 @@ Schema::create('superheroes_powers', function (Blueprint $table) {
     $table->foreign('power_id')->references('id')->on('powers');
     $table->boolean('isActive'); // So nothing needs to be deleted
 });
-
-
 
 ?>
