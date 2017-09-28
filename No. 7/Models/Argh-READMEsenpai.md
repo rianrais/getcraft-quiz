@@ -3,14 +3,17 @@
 Since we have superheroes_powers table to assign many powers to many heroes, using Laravel 
 'Many to Many' relationship - the model of: Superhero Model and Power Model will have 
 'belongsToMany' relation with each other. And we don't need to create the Model for 
-superheroes_powers table with this, because Laravel already figure it out by itself.
+superheroes_powers table with this, because Laravel already figure it out by itself - this is called 
+Pivot Table.
 
 And with the multiple addresses the superhero has, I am using what the Laravel called
 'One To Many' relationship. What this means is that one superhero may have infinite number
 of addresses. Thus in the Superhero Model, I state that the Superhero Model 'hasMany' 
-HeroAddress Model.
+HeroAddress Model. I am aware that it is much more SCALABLE to use the above (many to many relation)
+method (especially if you want to have 2 superheroes with same address). But I just want to show you 
+what I can do with Laravel, thus using different method. Thank you for your understanding Ser.
 
-BTW, here's an ASCII art (of our lord and savior):
+BTW as a bonus, here's an ASCII art (of our lord and savior):
 
  ,,,;,;,;,;,;,;,;;;;L                ...:,;;L;L;FyjjEhK5hKOO8S8SESpObb8OBOpb88bbpO8bb8BbQBQBQQgQQBQBQBQBQbbGpOGnzLrL;,  ,,:.... ..:L;;,;;;;,;;;;;,;;;,;,;,;,;,;"
  ;;;;;;;;;;;;;;;;;;L;      .         :;;;rzyyZFFZGOpG8OQ8Bbb8QBB8bBQBgg8OBbBOBBQBQQgggggg@g@g@g@@@@@@@@@@@g@ggQb5yL;;;:. .         ,zc;;;L;;;;;;;;;;;;;;;;;;;;;"

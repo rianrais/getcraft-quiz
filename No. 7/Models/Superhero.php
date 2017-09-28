@@ -23,6 +23,6 @@ class Superhero extends Model
 
     public function address()
     {
-        return $this->hasMany('App\Address');
+        return $this->hasMany('App\HeroAddress');
     }
 }

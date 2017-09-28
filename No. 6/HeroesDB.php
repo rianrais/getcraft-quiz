@@ -19,6 +19,7 @@
  Schema::create('countries', function (Blueprint $table) {
     $table->increments('id');
     $table->string('country');
+    $table->boolean('isExist')->default(true);
 });
 
 /**
@@ -29,6 +30,7 @@
 Schema::create('cities', function (Blueprint $table) {
     $table->increments('id');
     $table->string('city');
+    $table->boolean('isExist')->default(true);
     $table->integer('country_id')->unsigned(); // Foreign Key
     $table->foreign('country_id')->references('id')->on('countries');
 });
@@ -63,7 +65,6 @@ Schema::create('superheroes', function (Blueprint $table) {
     $table->string('first_name');
     $table->string('last_name');
     $table->string('alter_ego');
-    $table->string('address');
     $table->integer('status_id')->unsigned(); // Foreign Key
     $table->integer('gender_id')->unsigned(); // Foreign Key
     $table->foreign('status_id')->references('id')->on('statuses');
@@ -73,7 +74,7 @@ Schema::create('superheroes', function (Blueprint $table) {
 /**
  *  Heroes Addresses Table
  *
- *  ID | Address | Superhero ID | City ID  
+ *  ID | Address | Superhero ID | City ID | isActive
  */
 Schema::create('heroes_addresses', function (Blueprint $table) {
     $table->increments('id');
@@ -82,17 +83,19 @@ Schema::create('heroes_addresses', function (Blueprint $table) {
     $table->integer('city_id')->unsigned(); // Foreign Key
     $table->foreign('superhero_id')->references('id')->on('superheroes');
     $table->foreign('city_id')->references('id')->on('cities');
+    $table->string('isActive')->default(true);
 });
 
 /**
  *  Powers Table
  *
- *  ID | Power | Description
+ *  ID | Power | Description | PowerLv
  */
 Schema::create('powers', function (Blueprint $table) {
     $table->increments('id');
     $table->string('power');
     $table->string('description');
+    $table->integer('PowerLv');
 });
 
 /**
@@ -106,7 +109,6 @@ Schema::create('superheroes_powers', function (Blueprint $table) {
     $table->integer('power_id')->unsigned(); // Foreign Key
     $table->foreign('superhero_id')->references('id')->on('superheroes');
     $table->foreign('power_id')->references('id')->on('powers');
-    $table->boolean('isActive'); // So nothing needs to be deleted
 });
 
 ?>
