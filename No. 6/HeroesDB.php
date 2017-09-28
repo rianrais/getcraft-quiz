@@ -109,6 +109,7 @@ Schema::create('superheroes_powers', function (Blueprint $table) {
     $table->integer('power_id')->unsigned(); // Foreign Key
     $table->foreign('superhero_id')->references('id')->on('superheroes');
     $table->foreign('power_id')->references('id')->on('powers');
+    $table->boolean('isActive')->default(true);
 });
 
 ?>
