@@ -101,7 +101,7 @@ Schema::create('powers', function (Blueprint $table) {
 /**
  *  Superheroes Powers Table
  *
- *  ID | Superhero_ID | Power_ID | isActive
+ *  ID | Superhero_ID | Power_ID
  */
 Schema::create('superheroes_powers', function (Blueprint $table) {
     $table->increments('id');
@@ -109,7 +109,6 @@ Schema::create('superheroes_powers', function (Blueprint $table) {
     $table->integer('power_id')->unsigned(); // Foreign Key
     $table->foreign('superhero_id')->references('id')->on('superheroes');
     $table->foreign('power_id')->references('id')->on('powers');
-    $table->boolean('isActive')->default(true);
 });
 
 ?>
