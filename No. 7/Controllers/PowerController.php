@@ -64,7 +64,7 @@ class PowerController extends Controller
     
     public function listByHero($hero_id)
     {
-        $list = Superhero::with('Power.description')
+        $list = Superhero::with('power:description,PowerLv')
         ->where('id', $hero_id)
         ->get();
 

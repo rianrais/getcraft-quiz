@@ -55,7 +55,8 @@ class HeroesController extends Controller
         $hero->alter_ego = $request->input('alter_ego');
         $hero->gender_id = $request->input('gender_id');
         $hero->status = $request->input('status_id');
-
+        
+        //  Since not all heroes have a first and a last name.
         if($request->filled('last_name')) {
             $hero->last_name = $request->input('last_name');
         }
