@@ -10,4 +10,9 @@ class HeroAddress extends Model
     {
         return $this->belongsTo('App\Superhero');
     }
+
+    public function city()
+    {
+        return $this->belongsTo('App\City');
+    }
 }
