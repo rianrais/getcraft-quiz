@@ -1,40 +1,202 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Awesome Button</title>
-</head>
-<style>
-    a {
-        display: inline-block;
-        font-family: Verdana, Arial, sans-serif;
-        font-size: 1.5em;
-        font-weight: 700;
-        text-decoration: none;  
-        letter-spacing: -2px;
-        color: #656;
-        text-shadow: 0px 0px #fff;
-        background-color: #bbb;
-        padding: 10px 20px;
-        margin: 15px;
-        border-radius: 15px;
-        box-shadow: 
-        0px 1px 4px #111,
-        0px 0px 0px 7px #aaa,
-        0px 0px 0px 9px #fff,
-        0px 0px 0px 11px #111,
-        inset 0px 30px hsla(0,0%,100%,.2);  
-    }
+    <head>
+    <meta charset="UTF-8">
+    <title>Kewl Ad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+        * {box-sizing: border-box; margin: 0; padding: 0;}
+        body {font-family: "Open Sans", Palatino, Calibri, sans-serif; color: #424242; line-height: 1.4;}
+        /* Font */
+        h1 {
+            font-family: "Open Sans", Palatino, serif;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .container {
+            margin: 2em auto;
+            max-width: 630px;
+            text-align: center;
+        }
+        /* CSS */
+        .primary-btn {
+            background: #1CBC2C;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            height: 40px;
+            display: inline-block;
+            box-shadow: 0px 1px 0.5px #18a526;
+        }
+        .secondary-btn {
+            background: #fafafa;
+            color: #747474;
+            font-size: 0.8em;
+            border: solid 1px;
+            border-color: #eaeaea;
+            border-radius: 2px;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            width: 45%;
+            box-shadow: 0px 2px 0px #b7c9ce;
+        }
+        .link {
+            color: #20A1D4;
+            text-decoration: none;
+        }
+        section {
+            max-width: 265px;
+            margin: 2em auto;
+        }
+        .tooltip-wrapper {
+            margin-bottom: 0.5em;
+        }
+        .tooltip {
+            background: #424242;
+            color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .tooltip>p {
+            font-size: 0.8em;
+            color: #eaeaea;
+            text-align: center;
+        }
+        .arrow {
+            width: 0; 
+            height: 0; 
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid #424242;
+            margin-left: 14em;
+        }
+        .box {
+            border: 1px solid;
+            border-color: #eaeaea;
+            box-shadow: 0px 2px 1px #eaeaea;
+            height: 205px;
+            display: block;
+        }
+        .progress-bar-filled {
+            width: 75%;
+            height: 10px;
+            background: #EF5F3C;
+            float: left;
+        }
+        .progress-bar {
+            width: 25%;
+            height: 10px;
+            border-bottom: 1px solid;
+            border-color: #eaeaea;
+            float: left;
+        }
+        .content {
+        padding: 1em;
+        }
+        p {
+            font-size: 0.8em;
+            color: #777;
+            text-align: left;
+            line-height: 1.4; 
+            -webkit-font-smoothing: antialiased;
+        }
+        span {
+            font-weight: 600;
+            color: #EF5F3C;
+        }
+        form {
+            display: inline-block;
+            float: left;
+            border-radius: 4px;
+        }
+        .dollar {
+            position: relative;
+            top: 0px;
+            left: 19px;
+            font-size: 1.2em;
+            color: #777;
+        }
+        input {
+            width: 110px;
+            height: 40px;
+            font-size: 1em;
+            font-weight: 600;
+            color: #000;
+            text-indent: 27px;
+        }
+        .form-wrapper {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            font-size: 0.95em;
+        }
+        .small-text {
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 300;
+            text-align: left;
+            display: inline-block;
+            float: left;
+        }
+        .buttons {
+            display: block;
+            margin-top: 1em;
+            clear: both;
+        }
+        /* Helper classes */
+        .clear-both {
+            clear: both;
+        }
+        .mtop1 {
+            margin-top: 1em;
+        }
+        .mbot1 {
+            margin-bottom: 1em;
+        }
+        .mtop05 {
+            margin-top: 0.5em;
+        }
+        .float-right {
+            float: right;
+        }
+        .float-left {
+            float: left;
+        }
+    </style>
+    <body>
+        <div>
+            <section>
+                <div class="tooltip-wrapper">
+                    <div class="tooltip"><p><b>$167</b> still needed for this project</p></div> <div class="arrow"></div>
+                </div>
 
-    a:before,
-    a:after {
-    content: ' ★ ';
-    color: #777;
-    font-size: 1.5em;
-    }
-</style>
-<body>
-    <a href="#">CHECKOUT</a>
-</body>
+                <div class="box">
+                    <div class="progress-bar-filled"></div>
+                    <div class="progress-bar"></div>
 
+                    <div class="content">
+                        <p>
+                            <span>Only 3 days left</span> to fund this project.
+                        </p>
+                        <p>
+                            Join the <b>42</b> other donors who have already supported this project. Every dollar helps.
+                        </p>
+                        <div class="form-wrapper">
+                            <div class="input"> 
+                                <form class="pull-left"> <span class="dollar">&#36;</span><input type="text" value="50"></form>
+                            </div>
+                            <a href="#" class="primary-btn pull-right">Give Now</a>
+                        </div>
+                        <a href="#" class="link mtop1 small-text clear-both">Why give $50?</a>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="secondary-btn float-left">Save for later</a>
+                    <a href="#" class="secondary-btn float-right">Tell your friends</a>
+                </div>
+            </section>
+        </div>
+    </body>
 </html> 
