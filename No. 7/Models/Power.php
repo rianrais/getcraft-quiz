@@ -8,6 +8,6 @@ class Power extends Model
 {
     public function superhero()
     {
-        return $this->belongsToMany('App\Superhero', 'superheroes_powers');
+        return $this->belongsToMany('App\Superhero', 'power_superhero');
     }
 }
