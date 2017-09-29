@@ -13,7 +13,7 @@ use Models\Status;
 
 class HeroesController extends Controller 
 {
-    public function index($isActive, $hero_id)
+    public function index($isActive, $hero_id, $isActiveAddress)
     {
         
         // Checking for optional Hero ID input
