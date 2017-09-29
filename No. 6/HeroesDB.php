@@ -99,11 +99,11 @@ Schema::create('powers', function (Blueprint $table) {
 });
 
 /**
- *  Superheroes Powers Table
+ *  Power Superhero Table
  *
  *  ID | Superhero_ID | Power_ID
  */
-Schema::create('superheroes_powers', function (Blueprint $table) {
+Schema::create('power_superhero', function (Blueprint $table) {
     $table->increments('id');
     $table->integer('superhero_id')->unsigned(); // Foreign Key
     $table->integer('power_id')->unsigned(); // Foreign Key
